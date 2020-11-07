@@ -1,45 +1,43 @@
-# livewire-ckeditor
 
 
 
 
 
 
+{{-- header.blade.php --}}<br>
 
-{{-- header.blade.php --}}
-
-<script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script><br><br>
 
 
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-</script>
-
+<script><br>
+    ClassicEditor<br>
+        .create( document.querySelector( '#editor' ) )<br>
+        .catch( error => {<br>
+            console.error( error );<br>
+        } );<br>
+</script><br>
 
 
 
+<br><br>
 
-{{-- form.blade.php --}}
-<div
-            class="form-textarea w-full"
-            x-data
-            x-init="
-                console.log($refs.myIdentifierHere)
-                ClassicEditor.create($refs.myIdentifierHere)
-                .then( function(editor){
-                    editor.model.document.on('change:data', () => {
-                    $dispatch('input', editor.getData())
-                    })
-                })
-                .catch( error => {
-                    console.error( error );
-                } );
-            "
-            wire:ignore
-            wire:key="myIdentifierHere"
-            x-ref="myIdentifierHere"
+{{-- form.blade.php --}}<br>
+<div<br>
+            class="form-textarea w-full"<br>
+            x-data<br>
+            x-init="<br>
+                console.log($refs.myIdentifierHere)<br>
+                ClassicEditor.create($refs.myIdentifierHere)<br>
+                .then( function(editor){<br>
+                    editor.model.document.on('change:data', () => {<br>
+                    $dispatch('input', editor.getData())<br>
+                    })<br>
+                })<br>
+                .catch( error => {<br>
+                    console.error( error );<br>
+                } );<br>
+            "<br>
+            wire:ignore<br>
+            wire:key="myIdentifierHere"<br>
+            x-ref="myIdentifierHere"<br>
             wire:model.debounce.9999999ms="componentCode">{!! $componentCode !!}</div>

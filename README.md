@@ -7,7 +7,7 @@
 {{-- header.blade.php --}}<br>
 
 <script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script><br><br>
-
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.js" defer></script>
 
 <script><br>
     ClassicEditor<br>
